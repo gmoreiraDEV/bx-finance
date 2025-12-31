@@ -87,7 +87,7 @@ export async function GET(request: Request) {
       if (link) {
         latest = await prisma.billing.update({
           where: { id: latest.id },
-          data: { providerPaymentLink: link, metadata: latest.metadata },
+          data: { providerPaymentLink: link },
         });
       }
     } catch {
